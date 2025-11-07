@@ -13,6 +13,11 @@ func main() {
 		log.Fatal("erro ao carregar config:", err)
 	}
 
-	fmt.Printf("Conectando ao banco %s:%s (user=%s)\n",
-		cfg.DB.Host, cfg.DB.Port, cfg.DB.User)
+	db, err := config.ConnectDB(cfg)
+	if err != nil {
+		log.Fatal("erro ao conectar no banco:", err)
+	}
+	defer db.Close()
+
+	fmt.Println("Servidor iniciado com sucesso!")
 }
