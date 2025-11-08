@@ -23,6 +23,5 @@ func ConnectDB(cfg *Config) (*sql.DB, error) {
 		return nil, fmt.Errorf("erro ao conectar no banco: %w", err)
 	}
 
-	fmt.Println("✅ Conectado ao banco de dados PostgreSQL com sucesso.")
 	return db, nil
 }

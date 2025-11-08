@@ -23,5 +23,7 @@ func main() {
 	}
 	defer db.Close()
 
+	log.Info("Conectado ao banco de dados %s com sucesso.", cfg.DB.Driver)
+
 	log.Info("Servidor iniciado com sucesso na porta %s", cfg.AppPort)
 }
